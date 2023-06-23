@@ -1,35 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import styled from "styled-components";
+import GlobalStyles from "./styles/globalStyles";
+import Button from "./ui/Button";
+import Input from "./ui/Input";
+import Heading from "./ui/Heading";
+import Row from "./ui/Row";
+
+const StyledApp = styled.main`
+    padding: 20px;
+`;
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+    return (
+        <>
+            <GlobalStyles />
+            <StyledApp>
+                <Row type="vertical">
+                    <Row type="horizontal">
+                        <Heading as="h1">The Wild Oasis</Heading>
+                        <div>
+                            <Heading as="h2">Check in and out</Heading>
+                            <Button>Check in</Button>
+                            <Button>Check Out</Button>
+                        </div>
+                    </Row>
+                    <Row type="vertical">
+                        <Heading as="h3">Form</Heading>
+                        <div>
+                            <Input type="number" placeholder="number" />
+                            <Input type="number" placeholder="number" />
+                        </div>
+                    </Row>
+                </Row>
+            </StyledApp>
+        </>
+    );
 }
 
-export default App
+export default App;
