@@ -72,7 +72,7 @@ function SalesChart({ bookings, numDays }) {
                         tickLine={{ stroke: colors.text }}
                     />
                     <YAxis
-                        unit="$"
+                        unit="₹"
                         tick={{ fill: colors.text }}
                         tickLine={{ stroke: colors.text }}
                     />
@@ -87,7 +87,7 @@ function SalesChart({ bookings, numDays }) {
                         fill={colors.totalSales.fill}
                         strokeWidth={2}
                         name="Total sales"
-                        unit="$"
+                        unit="₹"
                     />
                     <Area
                         dataKey="extrasSales"
